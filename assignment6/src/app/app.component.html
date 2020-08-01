@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-se-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit) = "onSubmit()" #f = "ngForm">
+        <div class="form-group">
+          <label for = "email">Email</label>
+          <input class = "form-control" type = "email" name = "email" ngModel #email = "ngModel" required email>
+          <p *ngIf = "!email.valid">Please enter valid email id</p>
+        </div>
+        <div class="form-group">
+            <label>Subscription</label>
+            <select class = "form-control" name="subscription" [ngModel] = "'Advanced'" required>
+            <option value = "basic">Basic</option>
+            <option value = "Advanced">Advanced</option>
+            <option value = "Pro">Pro</option>
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="passward"></label>
+          <input class = "form-control" type = "passward" name = "passward" ngModel #passward = "ngModel" required>
+          <p *ngIf = "!passward.valid">Please enter valid passward </p> 
+        </div>
+        <hr>
+        <p *ngIf = "!f.valid "> form data is not valid</p>
+        <button class = "btn btn-primary" type = "submit">submit</button>
+      </form>  
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf = "submit">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>mail - {{user.email}} </p>
+      <p>subscription - {{user.subscribe}}</p>
+      <p>passward - {{user.pass}} </p>
+    </div>
+</div>

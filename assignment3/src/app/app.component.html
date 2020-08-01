@@ -1,0 +1,10 @@
+<button (click) = "displayDetail()"  >Display Detail</button>
+<div *ngIf = "status">
+  <p>name = prashant</p>
+  <p>phone = 8463856483</p>
+  <p>secret passward = gugul</p>
+</div>
+
+<ul>
+  <li *ngFor = "let number of array; let i = index" [ngStyle] = "{backgroundColor: i>=4 ? 'blue':'transparent'}" [ngClass] = "{ 'textcolor' : i>=4}">{{number}}</li>
+</ul>

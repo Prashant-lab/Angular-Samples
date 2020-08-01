@@ -1,0 +1,8 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../assets/fonts/Play-Regular.woff2);
+  }
+
+* {
+font-family: myFirstFont;
+}

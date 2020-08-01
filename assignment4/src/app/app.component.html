@@ -1,0 +1,7 @@
+<h2>Assignment 4</h2>
+<app-game-control (startGame) = gameStarted($event) ></app-game-control>
+
+<app-even  *ngFor = "let y of data" [element1] = "y"></app-even>
+<hr>
+<app-odd  *ngFor = "let x of data" [element] = "x"></app-odd>
+

@@ -1,0 +1,68 @@
+<div id="btn">
+    <p  id="myBtn"  (click) = "popup()">ADD</p>
+</div>
+<div class="grid-container">
+        <div class="grid-item"  *ngFor = "let user of users">
+            <div class="fullname">{{getFullName(user)}}<span id="deleteuser">&times;</span></div>
+            <div class="detail"> 
+                 <div [ngStyle]="{'background-image': 'url(' + getImage(user) + ')'}"></div>
+
+                    <ul>
+                        <li class="email">{{user.email}}</li>
+                        <li class="number">{{user.number}}</li>
+                        <li class="address">{{user.address}}</li>
+                        <li class="DOB">{{user.dob}}<span id="age">({{calAge(user)}})</span><span id="gender">{{user.gender}}</span></li>
+                    </ul>
+                
+            </div>
+        </div>
+</div>
+
+ <div id="myModal" class="modal"> 
+
+        <div class="modalContent">
+    
+            <div class="grid-container1">
+                <div class="grid-item1">
+                    <div>
+                    <canvas id="myCanvas" style=" height:230px ; max-width:100%; border:1px solid rgb(105, 102, 102);"></canvas>
+                    </div>
+                    <div>
+                    <button id="choose">Choose Image</button>
+                    <div id = "alert"></div>
+                    <input type="file" name="filechooser" id="ig"  (change) = "renderCanvas()">
+                    </div>
+                </div>
+                <div class="grid-item2">
+                    <div id="close">&times;</div><br>
+                    <form onsubmit="return saveUser()"> 
+                        <label>FIRST NAME</label>
+                        <input type="text" name="firstname" placeholder="Firstname" id="fn" pattern = "[A-Za-z]+" required>
+                        <br><br>
+                        <label>LAST NAME</label>
+                        <input type="text" name="lastname"  placeholder="Lastname"id="ln"  pattern = "[A-Za-z]+" required>
+                        <br><br>
+                        <label>EMAIL</label>
+                        <input type="email" name="email"  placeholder="Email.id"id="email" required>
+                        <br><br>
+                        <label>NUMBER</label>
+                        <input type="number" name="number"  placeholder="Number"id="num" required>
+                        <br><br>
+                        <label>ADDRESS</label>
+                        <input type="text" name="address" placeholder="Address" id="add" required>
+                        <br><br>
+                        <label>DOB</label>
+                        <input type="date" name="bday"  placeholder="DOB" id="dob" required>
+                        <br><br>
+                        <label>GENDER</label>
+                        <select name = "gender" id="gen"  required >
+                            <option disabled selected value>--select an option--</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select><br><br>
+                        <input type ="submit" value ="submit" >
+                    </form>
+                </div>
+            </div>
+        </div>
+     </div> 
